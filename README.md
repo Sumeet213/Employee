@@ -42,7 +42,7 @@ also, you need to create a .env file similar to the one shown in env.example.
 ### Start
 
 ```terminal
-$ cd placement   // go to project folder
+$ cd Employee   // go to project folder
 $ npm i       // npm install packages
 $ npm run start:dev // run it locally
 
