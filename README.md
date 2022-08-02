@@ -15,8 +15,14 @@ $ npm i
 ## project structure
 ```terminal
 
-Authentication/
-   package.json
+Employee/
+   -assets
+   -config
+   -controllers
+   -models
+   -routes
+   -views
+   -index.js
    .env (to create .env, check [prepare your db])
 ...
 ```
