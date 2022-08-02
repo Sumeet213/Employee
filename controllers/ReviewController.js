@@ -2,7 +2,7 @@
 const User = require('../models/user');
 const Review = require('../models/review');
 
-// SUBMI THE REVIEW FROM ALL USER(EMPLOYEE / ADMIN )
+// CREATE A REVIEW FROM ALL USER(EMPLOYEE / ADMIN )
 module.exports.createReview = async function(req,resp){
   
     try {
@@ -70,13 +70,13 @@ module.exports.reviewdata = async function(req,resp){
 
   } catch (error) {
     
-    console.log(`Error during fetching all review from review dashbaord :  ${error}`);
+    console.log(`Error during fetching all review from review dashboard :  ${error}`);
     resp.redirect("back");
 
   }
 }
 
-// VIEW THE REVIEW WITH AUTOFILL
+// VIEW THE REVIEW
 module.exports.viewdata = async function(req,resp){
 
     try {
@@ -100,13 +100,13 @@ module.exports.viewdata = async function(req,resp){
 
     } catch (error) {
       
-      console.log(`Error during view a review from review dashbaord :  ${error}`);
+      console.log(`Error during view a review from review dashboard :  ${error}`);
       resp.redirect("back");
     }
      
 }
 
-// EDIT THE REVIEW WITH AUTOFILL
+// EDIT THE REVIEW 
 module.exports.editReview = async function(req,resp){
 
     try {
@@ -132,7 +132,7 @@ module.exports.editReview = async function(req,resp){
 
     } catch (error) {
 
-      console.log(`Error during update a review page from review dashbaord :  ${error}`);
+      console.log(`Error during update a review page from review dashboard :  ${error}`);
       resp.redirect("back");
 
     }
@@ -158,14 +158,14 @@ module.exports.updateReview = async function(req,resp){
 
     }catch(error){
 
-        console.log(`Error during updating a review from review dashbaord :  ${error}`);
+        console.log(`Error during updating a review from review dashboard :  ${error}`);
         resp.redirect("back");
 
     }
 
 }
 
-// ADD REVIEW FROM REVIEW DASHBAORD (ONLY FOR ADMIN)
+// ADD REVIEW FROM REVIEW DASHBAORD (ADMIN)
 module.exports.addReview = async function(req,resp){
 
      try {
@@ -181,7 +181,7 @@ module.exports.addReview = async function(req,resp){
        
      } catch (error) {
 
-      console.log(`Error during adding a review form page from review dashbaord :  ${error}`);
+      console.log(`Error during adding a review form page from review dashboard :  ${error}`);
        resp.redirect("back");
 
      }
@@ -211,13 +211,13 @@ module.exports.addReviewfromadmin = async function(req,resp){
            reviewdetails.save();
            newreview.save();
            
-          req.flash("success", "ADMIN CREATE REVIEW FOR USER...");
+          req.flash("success", "ADMIN CREATED REVIEW FOR USER...");
       }
       return resp.redirect("/review/reviewdata");
 
     } catch (error) {
 
-      console.log(`Error during adding a review from review dashbaord :  ${error}`);
+      console.log(`Error during adding a review from review dashboard:  ${error}`);
       resp.redirect("back");
 
     }

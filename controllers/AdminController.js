@@ -2,7 +2,7 @@
 const User = require("../models/user");
 const Review = require('../models/review');
 
-// ASSIGN TASK PAGE SENDS WITH ALL EMPLOYEENAME
+// ASSIGN TASK PAGE SENDS DATA WITH ALL EMPLOYEE NAMES
 module.exports.assignTask = async function(req,resp){
 
     try
@@ -17,12 +17,12 @@ module.exports.assignTask = async function(req,resp){
     }
     catch(error){
 
-          console.log(`Error during assign task page :  ${error}`);
+          console.log(`Error during assigning task page :  ${error}`);
           resp.redirect("back");
     }
 }
 
-// ON SUBMIT THE ASSIGN TASK 
+// SUBMITTING THE TASK ASSIGNED
 module.exports.taskassigned = async function(req,resp){
 
      try {
@@ -34,7 +34,7 @@ module.exports.taskassigned = async function(req,resp){
        if(req.body.employee_name === req.body.reviewer_name)
        {
         
-        req.flash("error", "TASK ASSIGN YOUSELF NOT ALLOWED");
+        req.flash("error", "ASSIGNING TASK TO YOURSELF NOT ALLOWED");
         return resp.redirect("/admin/assigntask");
        }
 
@@ -47,7 +47,7 @@ module.exports.taskassigned = async function(req,resp){
        from_employee.evaluatebyme.push(to_employee);
        from_employee.save();
 
-      req.flash("success", "TASK ASSIGNED DONE...");
+      req.flash("success", "TASK ASSIGN DONE...");
       console.log("Task assigned successfully");
 
       return resp.redirect('back');
@@ -55,13 +55,13 @@ module.exports.taskassigned = async function(req,resp){
 
      } catch (error) {
 
-       console.log(`Error during assigned task :  ${error}`);
+       console.log(`Error during assigning task :  ${error}`);
        resp.redirect("back");
      }
 
 }
 
-// SHOW ALL EMPLOYEES RECORDS AND SEND THE ALL EMPLOYEES
+// SHOW ALL EMPLOYEES RECORDS AND SEND ALL THE EMPLOYEES
 module.exports.EmployeeRecords = async function(req,resp){
 
     try{
@@ -76,7 +76,7 @@ module.exports.EmployeeRecords = async function(req,resp){
 
     } catch (error) {
 
-       console.log(`Error during showing on all employee records :  ${error}`);
+       console.log(`Error during showing all employee records :  ${error}`);
        resp.redirect("back");
     }
 }
@@ -110,7 +110,7 @@ module.exports.CreateUser = async function (req, resp) {
 
     if (req.body.password != req.body.confirmpassword) {
 
-      req.flash("error", "PASSWORD DOESNOT MATCH");
+      req.flash("error", "PASSWORD DOES NOT MATCH");
       return resp.redirect("back");
 
     }
@@ -164,13 +164,13 @@ module.exports.ViewEmployee = async function(req,resp){
 
      } catch (error) {
 
-       console.log(`Error during view an employee :  ${error}`);
+       console.log(`Error during viewing an employee :  ${error}`);
        resp.redirect("back");
      }
 
 }
 
-// EDIT FORM ON EDIT WITH AUTOFILL DATA
+// EDIT FORM ON EDIT 
 module.exports.UpdateReqUser = async function(req,resp){
 
      try {
@@ -297,7 +297,7 @@ module.exports.makeadmin = async function(req,resp){
 
         if (user.isAdmin == true) {
 
-          req.flash("error", "ALREADY ADMIN POWER ...");
+          req.flash("error", "ALREADY HAS ADMIN POWER ...");
           return resp.redirect("back");
         } else {
           user.isAdmin = true;
@@ -305,13 +305,13 @@ module.exports.makeadmin = async function(req,resp){
         }
 
         req.flash("success", "ADMIN POWER TRANSFER DONE...");
-        console.log("employee make admin successfully...");
+        console.log("employee made admin successfully...");
         
         return resp.redirect("back");
 
     } catch (error) {
 
-      console.log(`Error during making an employee to admin :  ${error}`);
+      console.log(`Error during making an employee an admin :  ${error}`);
       resp.redirect("back");
 
     }

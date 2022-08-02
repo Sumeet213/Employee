@@ -39,7 +39,7 @@ module.exports.home = async function(req,resp){
     return resp.render("home",{to_review,my_review});
 }
 
-// SIGIN PAGE
+// SIGN-IN PAGE
 module.exports.login = function(req,resp){
 
     if (!req.isAuthenticated()) {
@@ -49,7 +49,7 @@ module.exports.login = function(req,resp){
     return resp.redirect('/');
 }
 
-// SIGIN UP
+// SIGN-UP
 module.exports.signup = function(req,resp){
 
     if (!req.isAuthenticated()) {
@@ -97,7 +97,7 @@ module.exports.CreateUser = async function(req,resp){
     
 }
 
-// SESSION IS CREATE AFTER SUCCESSFULLY LOGIN
+// SESSION IS CREATED AFTER SUCCESSFULLY LOGIN
 module.exports.CreateSession = function(req,resp)
 { 
     req.flash("success", "Yayy !!! Logged In Successfully");
