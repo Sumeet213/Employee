@@ -20,12 +20,12 @@ const EmployeeSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  evaluatebyme: [
+  evaluatedbyme: [
     {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     }],
-  evaluatefromother: [
+  evaluatedfromothers: [
     {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Review",

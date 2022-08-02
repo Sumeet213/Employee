@@ -13,8 +13,8 @@ module.exports.home = async function(req,resp){
     let user = await User.findById(req.user._id);
     let to_review=[];
 
-     for (let i = 0; i < user.evaluatebyme.length; i++) {
-       let data = await User.findById(user.evaluatebyme[i]);
+     for (let i = 0; i < user.evaluatedbyme.length; i++) {
+       let data = await User.findById(user.evaluatedbyme[i]);
        to_review.push(data);
      }
     

@@ -41,10 +41,10 @@ module.exports.taskassigned = async function(req,resp){
        let to_employee = await User.findById(req.body.employee_name);
        let from_employee = await User.findById(req.body.reviewer_name);
 
-       to_employee.evaluatefromother.push(from_employee);
+       to_employee.evaluatedfromothers.push(from_employee);
        to_employee.save();
 
-       from_employee.evaluatebyme.push(to_employee);
+       from_employee.evaluatedbyme.push(to_employee);
        from_employee.save();
 
       req.flash("success", "TASK ASSIGN DONE...");
@@ -236,22 +236,22 @@ module.exports.deleteEmployee = async function(req,resp){
 
       for(let i=0;i<allusers.length;i++){
 
-        let index = await allusers[i].evaluatebyme.indexOf(id);
+        let index = await allusers[i].evaluatedbyme.indexOf(id);
 
         if(index!==-1){
             while(index!=-1){
-                  await allusers[i].evaluatebyme.splice(index,1);
-                  index = allusers[i].evaluatebyme.indexOf(id);
+                  await allusers[i].evaluatedbyme.splice(index,1);
+                  index = allusers[i].evaluatedbyme.indexOf(id);
             }
             await allusers[i].save();
         }
 
-        index = await allusers[i].evaluatefromother.indexOf(id);
+        index = await allusers[i].evaluatedfromothers.indexOf(id);
 
         if (index !== -1) {
           while (index != -1) {
-            await allusers[i].evaluatebyme.splice(index, 1);
-            index = allusers[i].evaluatebyme.indexOf(id);
+            await allusers[i].evaluatedbyme.splice(index, 1);
+            index = allusers[i].evaluatedbyme.indexOf(id);
           }
           await allusers[i].save();
         }

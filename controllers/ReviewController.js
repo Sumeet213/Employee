@@ -21,8 +21,8 @@ module.exports.createReview = async function(req,resp){
           for: to_user,
         });
 
-        const index = req.user.evaluatebyme.indexOf(req.params.id);
-        req.user.evaluatebyme.splice(index, 1);
+        const index = req.user.evaluatedbyme.indexOf(req.params.id);
+        req.user.evaluatedbyme.splice(index, 1);
         req.user.save();
 
         req.flash("success", "Review Submit");
@@ -206,7 +206,7 @@ module.exports.addReviewfromadmin = async function(req,resp){
              for: reviewdetails,
            });
 
-           reviewdetails.evaluatefromother.push(newreview._id);
+           reviewdetails.evaluatedfromothers.push(newreview._id);
 
            reviewdetails.save();
            newreview.save();
