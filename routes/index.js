@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 
-console.log("Router files is loading..........")
 
 // IMPORT THE USER CONTROLLERS
 const UserController = require('../controllers/UserController');
