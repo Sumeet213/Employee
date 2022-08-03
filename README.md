@@ -1,3 +1,9 @@
+## Project Description
+
+ An application that allows employees to submit feedback toward each other’s performance.
+
+
+
 ## Project Features
 - [Add/remove/update/view employees]
 - [Add/update/view performance reviews]
