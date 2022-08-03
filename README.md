@@ -1,3 +1,9 @@
+## Project Description
+
+ An application that allows employees to submit feedback toward each other’s performance.
+
+
+
 ## Project Features
 - [Add/remove/update/view employees]
 - [Add/update/view performance reviews]
@@ -42,7 +48,7 @@ also, you need to create a .env file similar to the one shown in env.example.
 ### Start
 
 ```terminal
-$ cd placement   // go to project folder
+$ cd Employee   // go to project folder
 $ npm i       // npm install packages
 $ npm run start:dev // run it locally
 
