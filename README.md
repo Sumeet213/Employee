@@ -32,7 +32,8 @@ Employee/
    .env (to create .env, check [prepare your db])
 ...
 ```
-
+## Admin Credentials
+- admin@gmail.com:admin
 
 ## Prerequisites
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
